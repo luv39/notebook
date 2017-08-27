@@ -63,4 +63,28 @@ def f(*args):               #可变参数
 
 def f(**kw):                #关键字参数
     pass
+```
+
+高级特性
+-----
+
+* 切片
+
+```python
+L[0:3:2]
+```
+
+* 迭代
+
+```python
+#用for循环来遍历可迭代对象，这种遍历称为迭代
+for key in d:
+    pass
+```
+
+* 列表生成式
+
+ ```python
+ [x * x for x in range(1, 11) if x % 2 == 0]
+ ```
 
