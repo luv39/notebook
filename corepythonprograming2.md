@@ -4,7 +4,7 @@ python基础
 * 模块结构和布局
 
 ```python
-#/usr/bin/env python          起始行
+#!/usr/bin/env python          起始行
 "this is a test module"      #模块文档
 
 import sys                   #模块导入
