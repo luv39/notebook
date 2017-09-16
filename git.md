@@ -14,6 +14,11 @@ git config --global user.name "luv39"
 git config --global user.email "1519667170@qq.com"
 ```
 
+* 设置ssh密钥
+```
+ssh-keygen -t rsa
+```
+ 
 * git命令输出中开启颜色显示
 
 ```
