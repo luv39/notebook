@@ -45,3 +45,20 @@
 | - | 小于 |
 | + | 大于 |
 
+
+# 磁盘
+## 挂载硬盘分区
+
+* 显示硬盘挂载情况命令`df -l`
+* 新硬盘挂载命令
+```
+sudo mount -t ntfs /dev/sdb1 /media/wd
+指定硬盘分区文件类型为ntfs,同时将/dev/sdb1挂载到/media/wd
+```
+* 查看硬盘的UUID命令`blkid /etc/sdb1`
+* 配置硬盘在系统启动自动挂载
+```
+在文件 /etc/fstab 中加入如下配置:
+# /dev/sdb1 was on /media/wd
+UUID=37eaa526-5d96-4237-8468-603df5216ce9     /media/wd     ntfs     defaults     0     0
+```
