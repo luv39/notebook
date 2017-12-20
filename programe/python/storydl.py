@@ -30,6 +30,7 @@ def getText(url, trytime=3):
         text = getHtmlText(url)
         if text != 404:
             break
+        time.sleep(1)
 
     return text
 
