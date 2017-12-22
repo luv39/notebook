@@ -6,14 +6,13 @@ import requests
 import time
 import random
 
-def getHtmlText(url):
+def getHtmlText(url, key):
     '''getHtmlText(url)
 
     get html and return
     '''
-    kv = {'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:57.0) Gecko/20100101 Firefox/57.0'}
     try:
-        r = requests.get(url, timeout=30, headers=kv)
+        r = requests.get(url, timeout=30, headers=key)
         r.raise_for_status()
         r.encoding = r.apparent_encoding
         text = r.text.encode('utf-8')
@@ -21,13 +20,13 @@ def getHtmlText(url):
     except:
         return 404
 
-def getText(url, trytime=3):
+def getText(url, trytime=3, key={'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:57.0) Gecko/20100101 Firefox/57.0'}):
     '''getText(url, trytime=3)
 
     if get html failed, try some times(3 default) more
     '''
     for i in range(trytime):
-        text = getHtmlText(url)
+        text = getHtmlText(url, key)
         if text != 404:
             break
         time.sleep(1)
@@ -98,7 +97,7 @@ def writeFile(hang, storyname):
     f = open(storyname, 'a')
     f.write(hang + '\n')
     f.close()
-
+    
 def storyDownload(url):
     '''storyDownload(url)
 
