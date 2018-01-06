@@ -32,9 +32,9 @@
 
 | | | |
 |:---:|:---:|:---:|
-| -mtime | -mmin | 文件被修改的时间
-| -ctime | -cmin | 文件被读取/执行的时间
-| -atime | -amin | 文件属性修改时间 
+| -mtime | -mmin | 文件被修改的时间 |
+| -ctime | -cmin | 文件被读取/执行的时间 |
+| -atime | -amin | 文件属性修改时间 |
 | | |
 
 * 查找3天(分钟)内修改过的文件 `find /tmp -mtime(-mmin) -3`
