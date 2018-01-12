@@ -74,6 +74,7 @@
 * 切换分支：`git checkout <name>`
 * 创建加切换分支：`git checkout -b <name>`
 * 合并某分支到当前分支：`git merge <name>`
+* 合并某分支到当前分支并产生提交: `git merge --no-ff <name>`
 * 删除分支：`git branch -d <name>`
 
 ## 标签管理
@@ -99,4 +100,12 @@
 * `cd /git`
 * `git init --bare gittest.git`
 * `chown -R git:git gittest.git`
+* 禁止**git**用户**shell**登录
+
+```bash
+vim /etc/passwd
+#将git用户最后改为/usr/bin/git-shell
+```
+
+* 把客户端公钥复制到`/home/git/.ssh/authorized_keys`文件中,实现ssh认证
 * 接下来就可以用`git@ip:/git/gittest.git`这个链接进行克隆,提交等动作了
