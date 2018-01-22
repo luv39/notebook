@@ -40,6 +40,8 @@
     - [线性表的抽象数据类型](#线性表的抽象数据类型)
     - [线性表的顺序存储结构](#线性表的顺序存储结构)
         - [顺序存储定义](#顺序存储定义)
+    - [顺序存储结构的插入与删除](#顺序存储结构的插入与删除)
+        - [获得元素操作](#获得元素操作)
 
 <!-- /TOC -->
 
@@ -263,3 +265,22 @@ typedef struct{
 * 线性表的最大存储容量:数组长度MAXSIZE
 * 线性表的当前长度:length
 
+## 顺序存储结构的插入与删除
+
+### 获得元素操作
+
+```c
+#define OK 1
+#define ERROR 0
+#define TRUE 1
+#define FALSE 0
+typedef int Status;//Status是函数的类型,其值是函数结果状态代码,如OK等
+
+Status GetElem(List L, int i, int *e)
+{
+    if(L.length == 0 || i<1 || i>L.length)
+        return ERROR;
+    *e = L.data[i-1];
+    return OK;
+}
+```
